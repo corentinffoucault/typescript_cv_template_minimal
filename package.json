@@ -1,0 +1,38 @@
+{
+    "name": "typescript_cv_template_simple",
+    "version": "1.0.0",
+    "description": "a simple typescript version of cv template",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/corentinffoucault/typescript_cv_template_simple.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "type": "module",
+    "scripts": {
+        "build": "npm run clean && npx tsc --build",
+        "build-tests": "tsc -p tsconfig.test.json && shx cp -r ./resources ./dist-tests",
+        "clean": "npx tsc --build --clean",
+        "clean-test": "tsc --build --clean tsconfig.test.json",
+        "install-recursive": "npm ci && npm run install-submodule",
+        "install-submodule": "(cd packages/json_cv_schema && npm install)",
+        "pretest": "npm run clean-test && npm run build && npm run build-tests",
+        "start": "node dist/index.js",
+        "test": "npm run pretest && find dist-tests -type f -name \"*Spec.js\" | xargs node --test"
+    },
+    "dependencies": {
+        "feather-icons": "^4.28.0",
+        "micromark": "^2.11.0",
+        "striptags": "^3.2.0"
+    },
+    "homepage": "https://github.com/corentinffoucault/typescript_cv_template_simple#readme",
+    "devDependencies": {
+        "@types/feather-icons": "^4.29.4",
+        "@types/node": "^24.2.1",
+        "@types/sinon": "^17.0.4",
+        "shx": "^0.4.0",
+        "sinon": "^21.0.0"
+    }
+}
