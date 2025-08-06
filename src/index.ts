@@ -1,6 +1,6 @@
 import ResumeGenerator from "./ResumeConvertor.js";
 import * as fs from 'fs/promises';
-import { ResumeSchema } from "./type/type.js";
+import { ResumeSchema } from "../../json_cv_schema/src/type/type.js";
 
 async function main() {
     const resume = await fs.readFile("resource/resume.json");

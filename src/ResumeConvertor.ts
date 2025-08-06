@@ -1,5 +1,5 @@
 import { ResumeGenerator } from "./components/resume.js";
-import { ResumeSchema } from "./type/type.js";
+import { ResumeSchema } from "../../json_cv_schema/src/type/type.js";
 import * as fs from 'fs/promises';
 
 export default class ResumeConvertor {

@@ -1,4 +1,4 @@
-import type { Skill } from "../type/type.js";
+import type { Skill } from "../../../json_cv_schema/src/type/type.js";
 
 export class SkillGenerator {
 

@@ -1,5 +1,5 @@
 
-import type { Labels, Work } from '../type/type.js';
+import type { Labels, Work } from '../../../json_cv_schema/src/type/type.js';
 import markdown from '../utils/markdown.js';
 
 export class WorkSkillGenerator {

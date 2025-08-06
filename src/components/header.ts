@@ -1,7 +1,7 @@
 import markdown from '../utils/markdown.js';
 import Icon from '../utils/icon.js';
 import Link from '../utils/link.js';
-import type { Basics, Location, Profiles } from '../type/type.js';
+import type { Basics, Location, Profiles } from '../../../json_cv_schema/src/type/type.js';
 
 export class HeaderGenerator {
 

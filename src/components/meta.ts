@@ -1,4 +1,4 @@
-import type { Basics } from '../type/type.js';
+import type { Basics } from '../../../json_cv_schema/src/type/type.js';
 import markdown from '../utils/markdown.js';
 
 export class MetaGenerator {

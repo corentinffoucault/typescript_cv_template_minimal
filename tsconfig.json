@@ -6,6 +6,8 @@
         ]
     },
     "compilerOptions": {
+        "composite": true,
+        "declarationMap": true,
         "target": "es2023",
         "module": "esnext",
         "moduleResolution": "bundler",
@@ -30,5 +32,10 @@
     ],
     "include": [
         "src/**/*.ts"
+    ],
+    "references": [
+        {
+            "path": "../json_cv_schema",
+        },
     ]
 }

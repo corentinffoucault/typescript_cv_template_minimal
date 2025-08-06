@@ -1,4 +1,4 @@
-import type { Interest, Labels } from '../type/type.js';
+import type { Interest, Labels } from '../../../json_cv_schema/src/type/type.js';
 
 export class InterestGenerator {
 
