@@ -1,0 +1,412 @@
+{
+    "labels": {
+        "works": "Emplois",
+        "language": "Langues",
+        "planguages": "Languages",
+        "team": "Equipe",
+        "tools": "Outils",
+        "environment": "Environnements",
+        "methods": "Méthodes",
+        "worksSkill": "Sujets",
+        "diploma": "Diplome",
+        "interests": "Passions"
+    },
+    "basics": {
+        "name": "FOUCAULT Corentin",
+        "label": "Ingénieur Développeur BackEnd",
+        "image": "",
+        "birth": "02/04/1988",
+        "email": "corentinf@free.fr",
+        "phone": "06 31 95 29 85",
+        "url": "",
+        "summary": "",
+        "location": {
+            "address": "2b rue babière",
+            "postalCode": "38120",
+            "city": "FONTANIL-CORNILLON",
+            "countryCode": "FR",
+            "region": "Isère"
+        },
+        "profiles": [
+            {
+                "network": "Linkedin",
+                "username": "corentin foucault",
+                "url": "https://www.linkedin.com/in/corentin-foucault-71623486/"
+            }
+        ]
+    },
+    "work": [
+        {
+            "name": "BeeBuzziness",
+            "description": "Entreprise d'une vingtaine de Développeurs. Éditeur de sa propre solution de stockage de document multidomaine en ligne",
+            "position": "Ingénieur Développeur BackEnd",
+            "team": {
+                "back": 4,
+                "front": 3,
+                "fullStack": 0,
+                "description": "Agile scrum"
+            },
+            "url": "https://go.ubstream.com/",
+            "startDate": "2021",
+            "endDate": "24 mars 2025",
+            "summary": "Consolidation des fonctionnalités des bibliothèques virtuelles par l’amélioration de leur robustesse, de leur scalabilité et de leur fluidité d’utilisation",
+            "highlights": [
+                {
+                    "subject": "Conception d’un moteur de recherche multilingue",
+                    "cat": "Sujets",
+                    "details": [
+                        "Optimisation de l'indexation des documents dans un contexte multilingue",
+                        "Mise en place d'une architecture de recherche multilingue plus performant",
+                        "Ajout de suggestion intelligente à la recherche",
+                        "Conception d'une syntaxe de requête personnalisée pour la recherche avancée"
+                    ]
+                },
+                {
+                    "subject": "Conception de gestion CRUD de graphes orientés non cyclique sur de grand volume avec retour sur erreur",
+                    "cat": "Sujets",
+                    "details": [
+                        "Suppression définitive d'arborescence",
+                        "Déplacement d'arborescence",
+                        "Analyse des graphes acycliques orientés",
+                        "Gestion et restauration de la corbeille"
+                    ]
+                },
+                {
+                    "subject": "Migration d’une interface et d’un serveur de gestion de workflow d'impressions",
+                    "cat": "Sujets"
+                },
+                {
+                    "subject": "Ajout de tests et d'une intégration continue (CI/CD)",
+                    "cat": "Cadres"
+                }
+            ],
+            "planguages": [
+                "typescript",
+                "nodeJs",
+                "javascript",
+                "python"
+            ],
+            "env": [
+                "mongodb",
+                "docker",
+                "elasticsearch",
+                "kubernetes"
+            ],
+            "tools": [
+                "webstorm",
+                "jira",
+                "gitlab",
+                "slack",
+                "jenkins"
+            ],
+            "method": [
+                "scrum",
+                "TDD",
+                "BDD",
+                "intégration continue"
+            ]
+        },
+        {
+            "name": "BeeBuzziness",
+            "position": "Ingénieur Développeur R&D",
+            "team": {
+                "back": 1,
+                "front": 0,
+                "fullStack": 0,
+                "description": "R&D"
+            },
+            "url": "https://go.ubstream.com/",
+            "startDate": "avril 2022",
+            "endDate": "octobre 2023",
+            "summary": "Projet d'étude dans le cadre de la veille technologique",
+            "highlights": [
+                {
+                    "subject": "Études sur la gestion de graphes orientés non cyclique via une base donnée de type graphe",
+                    "cat": "Études"
+                },
+                {
+                    "subject": "Études sur les IA et usage dans le contexte des bibliothèques virtuelles",
+                    "cat": "Études",
+                    "details": [
+                        "Labellisation d'image pour la recherche",
+                        "Aide à la conversion des documents en groupe d'articles",
+                        "Aide dans la compréhension des bugs",
+                        "Ajout d'un RAG (Retrieval-Augmented Generation) pour la recherche de document"
+                    ]
+                },
+                {
+                    "subject": "Présentation régulière de l'avancement devant l'ensemble des équipes"
+                }
+            ],
+            "planguages": [
+                "Python"
+            ],
+            "env": [
+                "TensorFlow"
+            ],
+            "tools": [
+                "hugginFace",
+                "Neo4J"
+            ],
+            "method": []
+        },
+        {
+            "name": "BeeBuzziness",
+            "position": "Ingénieur Développeur BackEnd",
+            "team": {
+                "back": 5,
+                "front": 0,
+                "fullStack": 0,
+                "description": "Agile scrum"
+            },
+            "url": "https://go.ubstream.com/",
+            "startDate": "2017",
+            "endDate": "2021",
+            "summary": "Génération de contenu pour les médias virtuels à partir de fichier PDF",
+            "highlights": [
+                {
+                    "subject": "Conversion du projet dans une architecture microservices",
+                    "cat": "Cadres"
+                },
+                {
+                    "subject": "Ajout de tests et d'une intégration continue (CI/CD)",
+                    "cat": "Cadres"
+                },
+                {
+                    "subject": "Conception d'algorithme de fusion et d'ordonnancement de zone",
+                    "cat": "Sujets"
+                },
+                {
+                    "subject": "Conception d'un correcteur de texte nGram",
+                    "cat": "Sujets"
+                },
+                {
+                    "subject": "Participation à des projets open source: pdfToHtmlEx/poppler/fontforge ",
+                    "cat": "Sujets"
+                },
+                {
+                    "subject": "Conception d'un système de priorisation de traitement",
+                    "cat": "Sujets"
+                }
+            ],
+            "planguages": [
+                "typescript",
+                "nodeJs",
+                "javascript",
+                "C/C++",
+                "JAVA",
+                "Python"
+            ],
+            "env": [
+                "mongodb",
+                "docker",
+                "elasticsearch",
+                "kubernetes",
+                "terraform"
+            ],
+            "tools": [
+                "webstorm",
+                "IntelliJ",
+                "jira",
+                "gitlab",
+                "slack",
+                "jenkins"
+            ],
+            "method": [
+                "scrum",
+                "TDD",
+                "BDD",
+                "intégration continue"
+            ]
+        },
+        {
+            "name": "BeeBuzziness",
+            "position": "Ingénieur Développeur fullStack",
+            "team": {
+                "back": 4,
+                "front": 0,
+                "fullStack": 1,
+                "description": "Agile scrum"
+            },
+            "url": "https://go.ubstream.com/",
+            "startDate": "2016",
+            "endDate": "2016",
+            "summary": "Migration des catalogues retail FLEX vers HTML",
+            "highlights": [
+                {
+                    "subject": "Migration du flux de génération de catalogue retail dans un projet Typescript",
+                    "alternative": "Migration d'un flux de génération vers un nouveau langage",
+                    "cat": "Sujets"
+                },
+                {
+                    "subject": "Ajout de tests et d'une intégration continue (CI/CD)",
+                    "cat": "Cadres"
+                },
+                {
+                    "subject": "J'ai maintenu le projet jusqu'en 2022, fin de l'offre retail"
+                }
+            ],
+            "planguages": [
+                "typescript",
+                "nodeJs",
+                "javascript",
+                "C#"
+            ],
+            "env": [
+                "mongodb",
+                "docker",
+                "elasticsearch",
+                "kubernetes"
+            ],
+            "tools": [
+                "webstorm",
+                "IntelliJ",
+                "jira",
+                "gitlab",
+                "slack",
+                "jenkins"
+            ],
+            "method": [
+                "scrum",
+                "TDD",
+                "BDD"
+            ]
+        },
+        {
+            "name": "BeeBuzziness",
+            "position": "Ingénieur Développeur fullStack",
+            "url": "https://go.ubstream.com/",
+            "startDate": "octobre 2014",
+            "endDate": "2016",
+            "summary": "Maintien et amélioration des catalogues et bibliothèques FLEX",
+            "team": {
+                "fullStack": 1,
+                "back": 3,
+                "front": 0,
+                "description": "Agile scrum"
+            },
+            "highlights": [
+                {
+                    "subject": "Définition de l’architecture d’un flux ETL pour la génération de catalogues retail",
+                    "cat": "Sujets"
+                },
+                {
+                    "subject": "Modélisation d’un processus de gestion à la demande des impressions",
+                    "cat": "Sujets"
+                },
+                {
+                    "subject": "Support client direct",
+                    "cat": "Sujets"
+                },
+                {
+                    "subject": "Maintenance et amélioration de l'interface de catalogue virtuel",
+                    "cat": "Sujets"
+                }
+            ]
+        },
+        {
+            "name": "FDI",
+            "position": "Ingénieur Développeur fullStack",
+            "team": {
+                "fullStack": 5,
+                "back": 0,
+                "front": 0,
+                "description": "Agile scrum"
+            },
+            "url": "http://www.fdi-logbox.com/",
+            "startDate": "janvier 2013",
+            "endDate": "octobre 2014",
+            "summary": "Développement du logiciel interne de gestion et de recouvrement des créances",
+            "description": "Entreprise de cinq Développeurs. Éditeur de sa propre solution de gestion de créance",
+            "highlights": [
+                {
+                    "subject": "Implémentation d'interfaces de gestion de créance",
+                    "cat": "Sujets"
+                },
+                {
+                    "subject": "Implémentation d'un serveur de gestion de créance",
+                    "cat": "Sujets"
+                }
+            ]
+        }
+    ],
+    "volunteer": [],
+    "education": [
+        {
+            "institution": "Polytech'Grenoble",
+            "url": "https://polytech.grenoble-inp.fr/",
+            "area": "Ingénieur RICM",
+            "endDate": "2012"
+        }
+    ],
+    "awards": [],
+    "certificates": [],
+    "publications": [],
+    "skills": [
+        {
+            "name": "Langages",
+            "keywords": [
+                "Typescript",
+                "NodeJs",
+                "Javascript",
+                "Java",
+                "Python",
+                "c/c++",
+                "c#"
+            ]
+        },
+        {
+            "name": "Bdd",
+            "keywords": [
+                "mongodb",
+                "sql",
+                "elasticSearch",
+                "neo4j"
+            ]
+        },
+        {
+            "name": "Méthodes",
+            "keywords": [
+                "SCRUM",
+                "TDD",
+                "BDD"
+            ]
+        },
+        {
+            "name": "Environnements",
+            "keywords": [
+                "docker",
+                "kubernetes",
+                "linux",
+                "terraform",
+                "micro-service"
+            ]
+        }
+    ],
+    "languages": [
+        {
+            "language": "Anglais",
+            "fluency": "Intermédiaire"
+        },
+        {
+            "language": "Espagnol",
+            "fluency": "Débutant"
+        }
+    ],
+    "interests": [
+        {
+            "name": "Advent of code",
+            "keywords": []
+        },
+        {
+            "name": "JDR et jeux de société",
+            "keywords": []
+        },
+        {
+            "name": "AMHE (Arts Martiaux Historiques Européens)",
+            "keywords": []
+        }
+    ],
+    "references": [],
+    "projects": []
+}

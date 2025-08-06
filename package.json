@@ -1,0 +1,27 @@
+{
+    "name": "typescript_cv_template_simple",
+    "version": "1.0.0",
+    "description": "a simple typescript version of cv template",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/corentinffoucault/typescript_cv_template_simple.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "type": "module",
+    "scripts": {
+        "build": "npx tsc",
+        "start": "node dist/index.js"
+    },
+    "dependencies": {
+        "feather-icons": "^4.28.0",
+        "micromark": "^2.11.0",
+        "striptags": "^3.2.0"
+    },
+    "homepage": "https://github.com/corentinffoucault/typescript_cv_template_simple#readme",
+    "devDependencies": {
+        "@types/feather-icons": "^4.29.4"
+    }
+}
