@@ -1,13 +1,9 @@
 import { promises as fs } from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
-
 import ResumeGenerator from "./generator/Resume.js";
-import { ResumeSchema } from "../packages/json_cv_schema/src/index.js";
-import { IResumeConvertor } from "../packages/json_cv_schema/src/type/IResumeConvertor.js";
-
-export default class ResumeConvertor implements IResumeConvertor {
-    public async generateResume(resumeJson: ResumeSchema) {
+export default class ResumeConvertor {
+    async generateResume(resumeJson) {
         const __filename = fileURLToPath(import.meta.url);
         const _srcPath = path.dirname(__filename);
         const _projectPath = path.dirname(_srcPath);

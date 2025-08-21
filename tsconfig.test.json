@@ -1,0 +1,23 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "rootDir": ".",
+        "outDir": "dist-tests",
+        "composite": false,
+        "declaration": false,
+        "declarationMap": false,
+        "types": [
+            "node"
+        ]
+    },
+    "include": [
+        "src/**/*",
+        "tests/**/*"
+    ],
+    "exclude": [],
+    "references": [
+        {
+            "path": "./packages/json_cv_schema",
+        }
+    ]
+}
