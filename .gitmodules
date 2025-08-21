@@ -1,0 +1,3 @@
+[submodule "packages/json_cv_schema"]
+	path = packages/json_cv_schema
+	url = https://github.com/corentinffoucault/json_cv_schema
