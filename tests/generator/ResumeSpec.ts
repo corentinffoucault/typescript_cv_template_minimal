@@ -2,10 +2,6 @@ import { before, describe, it } from 'node:test';
 import * as sinon from 'sinon';
 import assert from 'node:assert/strict';
 
-import * as fs from 'fs/promises';
-import * as path from 'path';
-import { fileURLToPath } from 'url';
-
 import ResumeGenerator from '../../src/generator/Resume.js';
 import EducationGenerator from '../../src/generator/Education.js';
 import InterestGenerator from '../../src/generator/Interests.js';
@@ -100,9 +96,7 @@ describe('Header', async () => {
         <!doctype html>
         <html lang="en">
             <head>
-                <meta charset="utf-8" />
                 generated meta
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" />
                 <style>
                     
@@ -167,9 +161,7 @@ describe('Header', async () => {
         <!doctype html>
         <html lang="en">
             <head>
-                <meta charset="utf-8" />
                 generated meta
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" />
                 <style>
                     style

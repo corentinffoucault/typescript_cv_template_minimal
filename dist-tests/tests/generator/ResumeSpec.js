@@ -81,9 +81,7 @@ describe('Header', async () => {
         <!doctype html>
         <html lang="en">
             <head>
-                <meta charset="utf-8" />
                 generated meta
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" />
                 <style>
                     
@@ -146,9 +144,7 @@ describe('Header', async () => {
         <!doctype html>
         <html lang="en">
             <head>
-                <meta charset="utf-8" />
                 generated meta
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" />
                 <style>
                     style
