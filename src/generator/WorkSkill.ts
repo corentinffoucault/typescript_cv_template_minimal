@@ -4,7 +4,7 @@ import Markdown from '../utils/MarkdownGenerator.js';
 
 export default class WorkSkillGenerator {
 
-    public static generate(work: Work[] = [], labels: Labels): string {
+    public static generate(work: Work[], labels: Labels): string {
         if (work.length == 0) {
             return '';
         }

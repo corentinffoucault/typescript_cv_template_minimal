@@ -2,7 +2,7 @@ import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 
 import WorkSkillGenerator from '../../src/generator/WorkSkill.js';
-// TODO: corriger les test
+
 describe('Work', () => {
     it('generate minimal workSkill', () => {
         const header = WorkSkillGenerator.generate([], {
@@ -37,6 +37,7 @@ describe('Work', () => {
             summary: 'Resume of the current job',
             highlights: [
                 {
+                    cat: 'firstCat',
                     subject: 'first subject',
                     details: [
                         'first detail',
@@ -44,7 +45,11 @@ describe('Work', () => {
                     ]
                 },
                 {
+                    cat: 'secondCat',
                     subject: 'second subject'
+                },
+                {
+                    subject: 'third subject'
                 }
             ],
             planguages: [
@@ -78,12 +83,20 @@ describe('Work', () => {
         assert.equal(header, `
             <div id="workSkill">
                 <div class="highlights">
-                    aaaa
+                    
+            <h3>firstCat</h3>
+            <ul>
+                <li><p>first subject</p></li>
+            </ul>
+            <h3>secondCat</h3>
+            <ul>
+                <li><p>second subject</p></li>
+            </ul>
                 </div>
             </div>`);
     });
 
-    it('generate two workSkill from two company', () => {
+    it('generate two workSkill from two job', () => {
         const header = WorkSkillGenerator.generate([{
             name: 'First Company Name',
             description: 'Description of the company',
@@ -100,6 +113,7 @@ describe('Work', () => {
             summary: 'Resume of the current job',
             highlights: [
                 {
+                    cat: 'firstCat',
                     subject: 'first subject',
                     details: [
                         'first detail',
@@ -107,7 +121,11 @@ describe('Work', () => {
                     ]
                 },
                 {
+                    cat: 'secondCat',
                     subject: 'second subject'
+                },
+                {
+                    subject: 'third subject'
                 }
             ],
             planguages: [
@@ -142,14 +160,20 @@ describe('Work', () => {
             summary: 'Resume of the current job',
             highlights: [
                 {
-                    subject: 'first subject',
+                    cat: 'firstCat',
+                    subject: 'first subject for other job',
                     details: [
                         'first detail',
                         'second detail'
                     ]
                 },
                 {
-                    subject: 'second subject'
+                    cat: 'secondCat',
+                    subject: 'second subject for other job'
+                },
+                {
+                    cat: 'thirdCat',
+                    subject: 'third subject for other job'
                 }
             ],
             planguages: [
@@ -183,112 +207,19 @@ describe('Work', () => {
         assert.equal(header, `
             <div id="workSkill">
                 <div class="highlights">
-                    aaaaa
-                </div>
-            </div>`);
-    });
-
-    it('generate two workSkill from one company', () => {
-        const header = WorkSkillGenerator.generate([{
-            name: 'First Company Name',
-            description: 'Description of the company',
-            position: 'My position in the company',
-            team: {
-                back: 4,
-                front: 3,
-                fullStack: 0,
-                description: 'Agile scrum'
-            },
-            url: 'https://CompanyUrl/',
-            startDate: '2021',
-            endDate: '24 March 2025',
-            summary: 'Resume of the current job',
-            highlights: [
-                {
-                    subject: 'first subject',
-                    details: [
-                        'first detail',
-                        'second detail'
-                    ]
-                },
-                {
-                    subject: 'second subject'
-                }
-            ],
-            planguages: [
-                'planguages1',
-                'planguages2'
-            ],
-            env: [
-                'env1',
-                'env2'
-            ],
-            tools: [
-                'tools1',
-                'tools2'
-            ],
-            method: [
-                'method1',
-                'method2'
-            ]
-        }, {
-            name: 'First Company Name',
-            description: 'Description of the company',
-            position: 'My position in the company',
-            team: {
-                back: 4,
-                front: 3,
-                fullStack: 0,
-                description: 'Agile scrum'
-            },
-            url: 'https://CompanyUrl/',
-            startDate: '2021',
-            endDate: '24 March 2025',
-            summary: 'Resume of the current job',
-            highlights: [
-                {
-                    subject: 'first subject',
-                    details: [
-                        'first detail',
-                        'second detail'
-                    ]
-                },
-                {
-                    subject: 'second subject'
-                }
-            ],
-            planguages: [
-                'planguages1',
-                'planguages2'
-            ],
-            env: [
-                'env1',
-                'env2'
-            ],
-            tools: [
-                'tools1',
-                'tools2'
-            ],
-            method: [
-                'method1',
-                'method2'
-            ]
-        }], {
-            works: 'works',
-            planguages: 'planguages',
-            team: 'team',
-            tools: 'tools',
-            environment: 'environment',
-            methods: 'methods',
-            worksSkill: 'worksSkill',
-            diploma: 'diploma',
-            language: 'language',
-            interests: 'interests'
-        });
-        assert.equal(header, `
-            <div id="workSkill">
-                <div class="highlights">
-                    aaaa
+                    
+            <h3>firstCat</h3>
+            <ul>
+                <li><p>first subject</p></li><li><p>first subject for other job</p></li>
+            </ul>
+            <h3>secondCat</h3>
+            <ul>
+                <li><p>second subject</p></li><li><p>second subject for other job</p></li>
+            </ul>
+            <h3>thirdCat</h3>
+            <ul>
+                <li><p>third subject for other job</p></li>
+            </ul>
                 </div>
             </div>`);
     });

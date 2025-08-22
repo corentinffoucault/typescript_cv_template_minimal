@@ -1,6 +1,6 @@
 import Markdown from '../utils/MarkdownGenerator.js';
 export default class WorkSkillGenerator {
-    static generate(work = [], labels) {
+    static generate(work, labels) {
         if (work.length == 0) {
             return '';
         }
