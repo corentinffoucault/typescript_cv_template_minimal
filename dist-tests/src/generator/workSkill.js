@@ -1,28 +1,28 @@
 import Markdown from '../utils/MarkdownGenerator.js';
 export default class WorkSkillGenerator {
-    static generate(work, labels) {
+    generate(work, labels) {
         if (work.length == 0) {
             return '';
         }
-        const highlightsByCat = WorkSkillGenerator.groupHighlightByCategory(work);
+        const highlightsByCat = this.groupHighlightByCategory(work);
         return `
             <div id="workSkill">
                 <div class="highlights">
-                    ${Array.from(highlightsByCat).map(WorkSkillGenerator.generateCategory).join('')}
+                    ${Array.from(highlightsByCat).map(cat => this.generateCategory(cat)).join('')}
                 </div>
             </div>`;
     }
-    static generateCategory([category, highlights]) {
+    generateCategory([category, highlights]) {
         return `
             <h3>${category}</h3>
             <ul>
-                ${Array.from(highlights).sort().map(WorkSkillGenerator.generateHighlight).join('')}
+                ${Array.from(highlights).sort().map(highlight => this.generateHighlight(highlight)).join('')}
             </ul>`;
     }
-    static generateHighlight(highlight) {
+    generateHighlight(highlight) {
         return `<li>${Markdown.generate(highlight)}</li>`;
     }
-    static groupHighlightByCategory(work) {
+    groupHighlightByCategory(work) {
         return work.reduce((acc, { highlights }) => {
             if (!highlights || highlights.length == 0) {
                 return acc;

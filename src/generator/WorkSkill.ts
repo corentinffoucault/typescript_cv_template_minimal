@@ -4,34 +4,34 @@ import Markdown from '../utils/MarkdownGenerator.js';
 
 export default class WorkSkillGenerator {
 
-    public static generate(work: Work[], labels: Labels): string {
+    public generate(work: Work[], labels: Labels): string {
         if (work.length == 0) {
             return '';
         }
 
-        const highlightsByCat: Map<string, Set<string>> = WorkSkillGenerator.groupHighlightByCategory(work);
+        const highlightsByCat: Map<string, Set<string>> = this.groupHighlightByCategory(work);
 
         return `
             <div id="workSkill">
                 <div class="highlights">
-                    ${Array.from(highlightsByCat).map(WorkSkillGenerator.generateCategory).join('')}
+                    ${Array.from(highlightsByCat).map(cat => this.generateCategory(cat)).join('')}
                 </div>
             </div>`;
     }
 
-    private static generateCategory([category, highlights]: [string, Set<string>]): string {
+    private generateCategory([category, highlights]: [string, Set<string>]): string {
         return `
             <h3>${category}</h3>
             <ul>
-                ${Array.from(highlights).sort().map(WorkSkillGenerator.generateHighlight).join('')}
+                ${Array.from(highlights).sort().map(highlight => this.generateHighlight(highlight)).join('')}
             </ul>`;
     }
 
-    private static generateHighlight(highlight: string): string {
+    private generateHighlight(highlight: string): string {
         return `<li>${Markdown.generate(highlight)}</li>`;
     }
 
-    private static groupHighlightByCategory(work: Work[]): Map<string, Set<string>> {
+    private groupHighlightByCategory(work: Work[]): Map<string, Set<string>> {
         return work.reduce((acc, { highlights }) => {
             if (!highlights || highlights.length == 0) {
                 return acc;

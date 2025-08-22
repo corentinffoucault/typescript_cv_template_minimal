@@ -4,8 +4,9 @@ import assert from 'node:assert/strict';
 import LanguagesGenerator from '../../src/generator/Languages.js';
 
 describe('Languages', () => {
+    const languagesGenerator = new LanguagesGenerator();
     it('generate minimal language', () => {
-        const languages = LanguagesGenerator.generate([], {
+        const languages = languagesGenerator.generate([], {
             works: 'works',
             planguages: 'planguages',
             team: 'team',
@@ -21,7 +22,7 @@ describe('Languages', () => {
     });
 
     it('generate full language', () => {
-        const languages = LanguagesGenerator.generate([
+        const languages = languagesGenerator.generate([
             {
                 fluency: 'native',
                 language: 'language1'

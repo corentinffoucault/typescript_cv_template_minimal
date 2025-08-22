@@ -1,7 +1,7 @@
 import Duration from './Duration.js';
 import LinkGenerator from '../utils/LinkGenerator.js';
 export default class WorkSimplifyGenerator {
-    static generate(works = [], labels) {
+    generate(works = [], labels) {
         if (works.length == 0) {
             return '';
         }
@@ -19,12 +19,12 @@ export default class WorkSimplifyGenerator {
         <div id="work">
         <h3>${labels.works}</h3>
         <div class="stackSimple">
-          ${nestedWork.map(WorkSimplifyGenerator.generateWork).join('')}
+          ${nestedWork.map(work => this.generateWork(work)).join('')}
         </div>
       </div>`;
     }
-    static generateWork(job) {
-        const jobs = WorkSimplifyGenerator.buildTimeLine(job.jobs);
+    generateWork(job) {
+        const jobs = this.buildTimeLine(job.jobs);
         return `
               <article>
                 <header>
@@ -32,13 +32,13 @@ export default class WorkSimplifyGenerator {
                   <div class="meta">${job.description && `<div>${job.description}</div>`}</div>
                 </header>
                 <div class="timeline">
-                  ${jobs.map(WorkSimplifyGenerator.generateJob).join('')}
+                  ${jobs.map(job => this.generateJob(job)).join('')}
                 </div>
               </article>
             `;
     }
     //TODO: rework this part
-    static buildTimeLine(jobs) {
+    buildTimeLine(jobs) {
         return jobs.reduce((acc, subJob) => {
             let hasMelt = false;
             for (let element of acc) {
@@ -60,7 +60,7 @@ export default class WorkSimplifyGenerator {
             return acc;
         }, []);
     }
-    static generateJob(job) {
+    generateJob(job) {
         return `
             <div>
                 <span>

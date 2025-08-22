@@ -4,8 +4,9 @@ import assert from 'node:assert/strict';
 import EducationGenerator from '../../src/generator/Education.js';
 
 describe('Education', () => {
+    const educationGenerator = new EducationGenerator();
     it('generate empty education', () => {
-        const education = EducationGenerator.generate([], {
+        const education = educationGenerator.generate([], {
             works: 'works',
             planguages: 'planguages',
             team: 'team',
@@ -21,7 +22,7 @@ describe('Education', () => {
     });
 
     it('generate full education', () => {
-        const education = EducationGenerator.generate([{
+        const education = educationGenerator.generate([{
             area: "area",
             endDate: "2012",
             institution: "institution",

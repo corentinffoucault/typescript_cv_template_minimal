@@ -2,8 +2,9 @@ import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 import InterestsGenerator from '../../src/generator/Interests.js';
 describe('Interest', () => {
+    const interestsGenerator = new InterestsGenerator();
     it('generate empty Interests', () => {
-        const interests = InterestsGenerator.generate([], {
+        const interests = interestsGenerator.generate([], {
             works: 'works',
             planguages: 'planguages',
             team: 'team',
@@ -18,7 +19,7 @@ describe('Interest', () => {
         assert.equal(interests, ``);
     });
     it('generate full Interests', () => {
-        const interests = InterestsGenerator.generate([
+        const interests = interestsGenerator.generate([
             {
                 name: 'first interrest'
             },

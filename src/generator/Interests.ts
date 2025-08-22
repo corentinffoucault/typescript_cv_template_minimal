@@ -2,18 +2,18 @@ import type { Interest, Labels } from '../../packages/json_cv_schema/src/type/ty
 
 export default class InterestGenerator {
 
-    public static generate(interests: Interest[], labels: Labels): string {
+    public generate(interests: Interest[], labels: Labels): string {
         if (interests.length == 0) {
             return '';
         }
         return `
             <div class="container interests-container">
                 <h3 class="bold">${labels.interests}</h3>
-                ${interests.map(InterestGenerator.generateInterest).join('')}
+                ${interests.map(this.generateInterest).join('')}
             </div>`;
     }
 
-    private static generateInterest(interest: Interest): string {
+    private generateInterest(interest: Interest): string {
         return `
             <section class="item">
                 <div class="main-skill skill left">${interest.name}</div>

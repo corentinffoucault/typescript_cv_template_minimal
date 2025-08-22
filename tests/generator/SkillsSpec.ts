@@ -4,13 +4,14 @@ import assert from 'node:assert/strict';
 import SkillGenerator from '../../src/generator/Skills.js';
 
 describe('Skills', () => {
+    const skillGenerator = new SkillGenerator();
     it('generate minimal skills', () => {
-        const header = SkillGenerator.generate([]);
+        const header = skillGenerator.generate([]);
         assert.equal(header, ``);
     });
 
     it('generate full skills', () => {
-        const header = SkillGenerator.generate([{
+        const header = skillGenerator.generate([{
             keywords: ['keywords'],
             level: 'level',
             name: 'name'

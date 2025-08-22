@@ -4,8 +4,9 @@ import assert from 'node:assert/strict';
 import WorkSkillGenerator from '../../src/generator/WorkSkill.js';
 
 describe('Work', () => {
+    const workSkillGenerator = new WorkSkillGenerator();
     it('generate minimal workSkill', () => {
-        const header = WorkSkillGenerator.generate([], {
+        const header = workSkillGenerator.generate([], {
             works: 'works',
             planguages: 'planguages',
             team: 'team',
@@ -21,7 +22,7 @@ describe('Work', () => {
     });
 
     it('generate one minimal workSkill', () => {
-        const header = WorkSkillGenerator.generate([{
+        const header = workSkillGenerator.generate([{
             name: 'Company Name',
             description: 'Description of the company',
             position: 'My position in the company',
@@ -97,7 +98,7 @@ describe('Work', () => {
     });
 
     it('generate two workSkill from two job', () => {
-        const header = WorkSkillGenerator.generate([{
+        const header = workSkillGenerator.generate([{
             name: 'First Company Name',
             description: 'Description of the company',
             position: 'My position in the company',

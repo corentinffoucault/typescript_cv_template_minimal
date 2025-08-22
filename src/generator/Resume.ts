@@ -11,13 +11,26 @@ import WorkSkillGenerator from './WorkSkill.js';
 
 export default class ResumeGenerator {
 
-    public static generate(resume: ResumeSchema, css: Buffer, js: Buffer): string {
+    public constructor(
+        private metaGenerator: MetaGenerator,
+        private headerGenerator: HeaderGenerator,
+        private educationGenerator: EducationGenerator,
+        private languagesGenerator: LanguagesGenerator,
+        private skillGenerator: SkillGenerator,
+        private interestGenerator: InterestGenerator,
+        private workSkillGenerator: WorkSkillGenerator,
+        private workSimplifyGenerator: WorkSimplifyGenerator,
+    ) {
+
+    }
+
+    public generate(resume: ResumeSchema, css: Buffer, js: Buffer): string {
         return `
         <!doctype html>
         <html lang="en">
             <head>
                 <meta charset="utf-8" />
-                ${MetaGenerator.generate(resume.basics)}
+                ${this.metaGenerator.generate(resume.basics)}
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" />
                 <style>
@@ -29,19 +42,19 @@ export default class ResumeGenerator {
             </head>
             <body>
                 <div class="headers">
-                    ${HeaderGenerator.generate(resume.basics)} 
+                    ${this.headerGenerator.generate(resume.basics)} 
                 </div>
                 <div class="body">
                 <aside class="left-column">
-                    ${EducationGenerator.generate(resume.education, resume.labels)}
-                    ${LanguagesGenerator.generate(resume.languages, resume.labels)}
-                    ${SkillGenerator.generate(resume.skills)} 
-                    ${InterestGenerator.generate(resume.interests, resume.labels)}
+                    ${this.educationGenerator.generate(resume.education, resume.labels)}
+                    ${this.languagesGenerator.generate(resume.languages, resume.labels)}
+                    ${this.skillGenerator.generate(resume.skills)} 
+                    ${this.interestGenerator.generate(resume.interests, resume.labels)}
                 </aside>
                 <div class="vl"></div>
                     <div class="right-column">
-                        ${WorkSkillGenerator.generate(resume.work, resume.labels)} 
-                        ${WorkSimplifyGenerator.generate(resume.work, resume.labels)} 
+                        ${this.workSkillGenerator.generate(resume.work, resume.labels)} 
+                        ${this.workSimplifyGenerator.generate(resume.work, resume.labels)} 
                     </div>
                 </div>
             </body>

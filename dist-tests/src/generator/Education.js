@@ -1,6 +1,6 @@
 import Link from '../utils/LinkGenerator.js';
 export default class EducationGenerator {
-    static generate(educations, labels) {
+    generate(educations, labels) {
         if (educations.length == 0) {
             return '';
         }
@@ -9,12 +9,12 @@ export default class EducationGenerator {
                 <h3 class="bold">${labels.diploma}</h3>
                 <section id="education">
                     <div>
-                    ${educations.map(EducationGenerator.generateDiploma).join('')}
+                    ${educations.map(this.generateDiploma).join('')}
                     </div>
                 </section>
             </div>`;
     }
-    static generateDiploma(education) {
+    generateDiploma(education) {
         return `
             <article>
                 <header>

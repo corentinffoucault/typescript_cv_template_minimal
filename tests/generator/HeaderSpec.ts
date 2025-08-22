@@ -4,8 +4,9 @@ import assert from 'node:assert/strict';
 import HeaderGenerator from '../../src/generator/Header.js';
 
 describe('Header', () => {
+    const headerGenerator = new HeaderGenerator();
     it('generate minimal header', () => {
-        const header = HeaderGenerator.generate({
+        const header = headerGenerator.generate({
             name: 'firstName lastName',
             label: 'BackEnd Developer Engineer',
             email: 'myemail@email.com',
@@ -44,7 +45,7 @@ describe('Header', () => {
     });
 
     it('generate full header', () => {
-        const header = HeaderGenerator.generate({
+        const header = headerGenerator.generate({
             name: 'firstName lastName',
             label: 'BackEnd Developer Engineer',
             email: 'myemail@email.com',

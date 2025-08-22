@@ -1,16 +1,16 @@
 export default class SkillGenerator {
-    static generate(skills) {
+    generate(skills) {
         if (skills.length == 0) {
             return '';
         }
         return `
             <div class="container skill-container">
                 <section id="skills">
-                ${skills.map(SkillGenerator.generateSkill).join('')}
+                ${skills.map(skill => this.generateSkill(skill)).join('')}
                 </section>
             </div>`;
     }
-    static generateSkill(skill) {
+    generateSkill(skill) {
         return `
             <section class="container">
                 <div class="title">
@@ -18,11 +18,11 @@ export default class SkillGenerator {
                     <div class="keyline"></div>
                 </div>
                 <div class="minimal flex-container">
-                    ${skill.keywords?.map(SkillGenerator.generateKeyword).join('')}
+                    ${skill.keywords?.map(key => this.generateKeyword(key)).join('')}
                 </div>
             </section>`;
     }
-    static generateKeyword(keyword) {
+    generateKeyword(keyword) {
         return `<div class="main-skill skill left">${keyword}</div>`;
     }
 }

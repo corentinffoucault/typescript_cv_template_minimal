@@ -20,8 +20,10 @@
         "start": "node dist/index.js"
     },
     "dependencies": {
+        "@types/sinon": "^17.0.4",
         "feather-icons": "^4.28.0",
         "micromark": "^2.11.0",
+        "sinon": "^21.0.0",
         "striptags": "^3.2.0"
     },
     "homepage": "https://github.com/corentinffoucault/typescript_cv_template_simple#readme",

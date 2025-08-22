@@ -2,7 +2,7 @@ import Link from '../utils/LinkGenerator.js';
 import type { Education, Labels } from '../../packages/json_cv_schema/src/type/type.js';
 
 export default class EducationGenerator {
-    public static generate(educations: Education[], labels: Labels): string {
+    public generate(educations: Education[], labels: Labels): string {
         if (educations.length == 0) {
             return '';
         }
@@ -11,13 +11,13 @@ export default class EducationGenerator {
                 <h3 class="bold">${labels.diploma}</h3>
                 <section id="education">
                     <div>
-                    ${educations.map(EducationGenerator.generateDiploma).join('')}
+                    ${educations.map(this.generateDiploma).join('')}
                     </div>
                 </section>
             </div>`;
     }
 
-    public static generateDiploma(education: Education): string {
+    public generateDiploma(education: Education): string {
         return `
             <article>
                 <header>

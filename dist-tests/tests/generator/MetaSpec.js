@@ -2,8 +2,9 @@ import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 import MetaGenerator from '../../src/generator/Meta.js';
 describe('Meta', () => {
+    const metaGenerator = new MetaGenerator();
     it('generate minimal meta', () => {
-        const meta = MetaGenerator.generate({
+        const meta = metaGenerator.generate({
             name: 'firstName lastName',
             label: 'BackEnd Developer Engineer',
             email: 'myemail@email.com',
@@ -20,7 +21,7 @@ describe('Meta', () => {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />`);
     });
     it('generate full meta', () => {
-        const meta = MetaGenerator.generate({
+        const meta = metaGenerator.generate({
             name: 'firstName lastName',
             label: 'BackEnd Developer Engineer',
             email: 'myemail@email.com',

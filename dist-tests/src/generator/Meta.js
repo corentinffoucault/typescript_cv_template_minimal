@@ -1,6 +1,6 @@
 import Markdown from '../utils/MarkdownGenerator.js';
 export default class MetaGenerator {
-    static generate(basics) {
+    generate(basics) {
         const { name, summary } = basics;
         return `
                 <meta charset="utf-8" />

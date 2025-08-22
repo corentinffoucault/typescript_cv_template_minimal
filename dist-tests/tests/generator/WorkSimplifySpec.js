@@ -2,8 +2,9 @@ import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 import WorkSimplifyGenerator from '../../src/generator/WorkSimplify.js';
 describe('Work', () => {
+    const workSimplifyGenerator = new WorkSimplifyGenerator();
     it('generate minimal workSimplify', () => {
-        const header = WorkSimplifyGenerator.generate([], {
+        const header = workSimplifyGenerator.generate([], {
             works: 'works',
             planguages: 'planguages',
             team: 'team',
@@ -18,7 +19,7 @@ describe('Work', () => {
         assert.equal(header, ``);
     });
     it('generate one minimal workSimplify', () => {
-        const header = WorkSimplifyGenerator.generate([{
+        const header = workSimplifyGenerator.generate([{
                 name: 'Company Name',
                 description: 'Description of the company',
                 position: 'My position in the company',
@@ -101,7 +102,7 @@ describe('Work', () => {
       </div>`);
     });
     it('generate two workSimplify from two company', () => {
-        const header = WorkSimplifyGenerator.generate([{
+        const header = workSimplifyGenerator.generate([{
                 name: 'First Company Name',
                 description: 'Description of the company',
                 position: 'My position in the company',
@@ -246,7 +247,7 @@ describe('Work', () => {
       </div>`);
     });
     it('generate two workSimplify from one company', () => {
-        const header = WorkSimplifyGenerator.generate([{
+        const header = workSimplifyGenerator.generate([{
                 name: 'First Company Name',
                 description: 'Description of the company',
                 position: 'My position in the company',

@@ -25,7 +25,7 @@ type PartJob = {
 
 export default class WorkSimplifyGenerator {
 
-    public static generate(works: Work[] = [], labels: Labels): string {
+    public generate(works: Work[] = [], labels: Labels): string {
         if (works.length == 0) {
             return '';
         }
@@ -42,13 +42,13 @@ export default class WorkSimplifyGenerator {
         <div id="work">
         <h3>${labels.works}</h3>
         <div class="stackSimple">
-          ${nestedWork.map(WorkSimplifyGenerator.generateWork).join('')}
+          ${nestedWork.map(work => this.generateWork(work)).join('')}
         </div>
       </div>`;
     }
 
-    private static generateWork(job: NestedJob): string {
-        const jobs = WorkSimplifyGenerator.buildTimeLine(job.jobs);
+    private generateWork(job: NestedJob): string {
+        const jobs = this.buildTimeLine(job.jobs);
         return `
               <article>
                 <header>
@@ -56,14 +56,14 @@ export default class WorkSimplifyGenerator {
                   <div class="meta">${job.description && `<div>${job.description}</div>`}</div>
                 </header>
                 <div class="timeline">
-                  ${jobs.map(WorkSimplifyGenerator.generateJob).join('')}
+                  ${jobs.map(job => this.generateJob(job)).join('')}
                 </div>
               </article>
             `;
     }
 
     //TODO: rework this part
-    private static buildTimeLine(jobs: PartJob[]): PartJob[] {
+    private buildTimeLine(jobs: PartJob[]): PartJob[] {
         return jobs.reduce((acc: PartJob[], subJob: PartJob) => {
             let hasMelt = false;
             for (let element of acc) {
@@ -85,7 +85,7 @@ export default class WorkSimplifyGenerator {
         }, []);
     }
 
-    private static generateJob(job: PartJob): string {
+    private generateJob(job: PartJob): string {
         return `
             <div>
                 <span>

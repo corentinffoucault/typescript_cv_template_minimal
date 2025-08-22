@@ -1,25 +1,25 @@
 import Icon from '../utils/IconGenerator.js';
 import Link from '../utils/LinkGenerator.js';
 export default class HeaderGenerator {
-    static formatCountry(countryCode) {
+    formatCountry(countryCode) {
         return Intl.DisplayNames ? new Intl.DisplayNames(['en'], { type: 'region' }).of(countryCode) : countryCode;
     }
-    static calculateAge(birthday) {
+    calculateAge(birthday) {
         var ageDifMs = Date.now() - birthday.getDate();
         var ageDate = new Date(ageDifMs);
         return Math.abs(ageDate.getUTCFullYear() - 1970);
     }
-    static generate(basics) {
+    generate(basics) {
         const { email, birth, label, location, name, phone, profiles = [] } = basics;
         return `
             <header class="masthead">
                 <div class="menu">
                     <div><h6>${name}</h6></div>
-                    <div>${birth ? `Age: ${HeaderGenerator.calculateAge(new Date(birth))}` : ''}</div>
+                    <div>${birth ? `Age: ${this.calculateAge(new Date(birth))}` : ''}</div>
                     <ul class="icon-list">
-                        ${HeaderGenerator.generateCity(location)}
-                        ${HeaderGenerator.generateEMail(email)}
-                        ${HeaderGenerator.generatePhone(phone)}
+                        ${this.generateCity(location)}
+                        ${this.generateEMail(email)}
+                        ${this.generatePhone(phone)}
                         ${profiles.map((profile) => HeaderGenerator.generateProfile(profile)).join('')}
                     </ul>
                 </div>
@@ -33,23 +33,23 @@ export default class HeaderGenerator {
                 ${network && `<span class="network">(${network})</span>`}
             </li>`;
     }
-    static generateCity(location) {
-        const htmlCity = `${location.city}, ${HeaderGenerator.formatCountry(location.countryCode)}`;
+    generateCity(location) {
+        const htmlCity = `${location.city}, ${this.formatCountry(location.countryCode)}`;
         const css = 'font-size: 10px;';
-        return HeaderGenerator.generateLineWithIcon('map-pin', htmlCity, css);
+        return this.generateLineWithIcon('map-pin', htmlCity, css);
     }
-    static generatePhone(phone) {
+    generatePhone(phone) {
         const htmlPhone = `<a href="tel:${phone.replace(/\s/g, '')}">${phone}</a>`;
-        return HeaderGenerator.generateLineWithIcon('phone', htmlPhone);
+        return this.generateLineWithIcon('phone', htmlPhone);
     }
-    static generateLink(url) {
-        return HeaderGenerator.generateLineWithIcon('link', Link.generate(url));
+    generateLink(url) {
+        return this.generateLineWithIcon('link', Link.generate(url));
     }
-    static generateEMail(email) {
+    generateEMail(email) {
         const htmlMail = `<a href="mailto:${email}">${email}</a>`;
-        return HeaderGenerator.generateLineWithIcon('mail', htmlMail);
+        return this.generateLineWithIcon('mail', htmlMail);
     }
-    static generateLineWithIcon(name, text, css) {
+    generateLineWithIcon(name, text, css) {
         return `
             <li${css ? ` style="${css}"` : ''}>
                 ${Icon.generate(name)}

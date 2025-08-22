@@ -1,5 +1,5 @@
 export default class LanguagesGenerator {
-    static generate(languages, labels) {
+    generate(languages, labels) {
         if (languages.length == 0) {
             return '';
         }
@@ -7,17 +7,17 @@ export default class LanguagesGenerator {
         <div class="container languages-container">
             <h3 class="bold">${labels.language}</h3>
             <ul class="minimal">
-                ${languages.map(LanguagesGenerator.generateLanguage).join('')}
+                ${languages.map(lang => this.generateLanguage(lang)).join('')}
             </ul>
         </div>`;
     }
-    static generateLanguage(language) {
+    generateLanguage(language) {
         return `
             <li>
-                <div class="subWorkInfo"><h6>${language.language}:</h6>  ${LanguagesGenerator.generateFluency(language)}</div>
+                <div class="subWorkInfo"><h6>${language.language}:</h6>  ${this.generateFluency(language)}</div>
             </li>`;
     }
-    static generateFluency(language) {
+    generateFluency(language) {
         if (language.fluency) {
             return `<em>${language.fluency}</em>`;
         }
