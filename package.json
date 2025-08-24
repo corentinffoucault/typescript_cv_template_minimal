@@ -16,7 +16,6 @@
         "build-tests": "tsc -p tsconfig.test.json && shx cp -r ./resources ./dist-tests",
         "pretest": "npm run build && npm run build-tests",
         "test": "find dist-tests -type f -name \"*Spec.js\" | xargs node --test",
-        "build2": "npx tsc --build tsconfig.json",
         "start": "node dist/index.js"
     },
     "dependencies": {
