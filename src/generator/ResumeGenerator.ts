@@ -1,13 +1,13 @@
 
-import type { ResumeSchema } from '../../packages/json_cv_schema/src/type/type.js';
-import EducationGenerator from './Education.js';
-import HeaderGenerator from './Header.js';
-import InterestGenerator from './Interests.js';
-import LanguagesGenerator from './Languages.js';
-import MetaGenerator from './Meta.js';
-import SkillGenerator from './Skills.js';
-import WorkSimplifyGenerator from './WorkSimplify.js';
-import WorkSkillGenerator from './WorkSkill.js';
+import type { ResumeSchema } from '../../packages/json_cv_schema/src/type/Type.js';
+import EducationGenerator from './EducationGenerator.js';
+import HeaderGenerator from './HeaderGenerator.js';
+import InterestGenerator from './InterestsGenerator.js';
+import LanguagesGenerator from './LanguagesGenerator.js';
+import MetaGenerator from './MetaGenerator.js';
+import SkillsGenerator from './SkillsGenerator.js';
+import WorkSimplifyGenerator from './WorkSimplifyGenerator.js';
+import WorkSkillGenerator from './WorkSkillGenerator.js';
 
 export default class ResumeGenerator {
 
@@ -16,7 +16,7 @@ export default class ResumeGenerator {
         private headerGenerator: HeaderGenerator,
         private educationGenerator: EducationGenerator,
         private languagesGenerator: LanguagesGenerator,
-        private skillGenerator: SkillGenerator,
+        private skillsGenerator: SkillsGenerator,
         private interestGenerator: InterestGenerator,
         private workSkillGenerator: WorkSkillGenerator,
         private workSimplifyGenerator: WorkSimplifyGenerator,
@@ -46,7 +46,7 @@ export default class ResumeGenerator {
                 <aside class="left-column">
                     ${this.educationGenerator.generate(resume.education, resume.labels)}
                     ${this.languagesGenerator.generate(resume.languages, resume.labels)}
-                    ${this.skillGenerator.generate(resume.skills)} 
+                    ${this.skillsGenerator.generate(resume.skills)} 
                     ${this.interestGenerator.generate(resume.interests, resume.labels)}
                 </aside>
                 <div class="vl"></div>

@@ -1,9 +1,9 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 
-import WorkSimplifyGenerator from '../../src/generator/WorkSimplify.js';
+import WorkSimplifyGenerator from '../../src/generator/WorkSimplifyGenerator.js';
 
-describe('Work', () => {
+describe('WorkGenerator', () => {
     const workSimplifyGenerator = new WorkSimplifyGenerator();
     it('generate minimal workSimplify', () => {
         const header = workSimplifyGenerator.generate([], {

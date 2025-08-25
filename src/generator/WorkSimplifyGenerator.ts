@@ -1,5 +1,5 @@
-import Duration from './Duration.js';
-import type { Iso8601, Labels, Team, Work, Highlight } from '../../packages/json_cv_schema/src/type/type.js';
+import DurationGenerator from './DurationGenerator.js';
+import type { Iso8601, Labels, Team, Work, Highlight } from '../../packages/json_cv_schema/src/type/Type.js';
 import LinkGenerator from '../utils/LinkGenerator.js';
 
 //TODO: rework the name
@@ -93,7 +93,7 @@ export default class WorkSimplifyGenerator {
                         <span class="simplifyWorkPosition">
                             <b>${job.position}</b>
                         </span>
-                        ${job.startDate && `: ${Duration.print(job.startDate, job.endDate)}`}
+                        ${job.startDate && `: ${DurationGenerator.print(job.startDate, job.endDate)}`}
                     </div>
                 </span>
             </div>`;

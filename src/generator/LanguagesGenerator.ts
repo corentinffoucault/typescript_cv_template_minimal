@@ -1,5 +1,5 @@
 
-import type { Labels, Language } from '../../packages/json_cv_schema/src/type/type.js';
+import type { Labels, Language } from '../../packages/json_cv_schema/src/type/Type.js';
 
 export default class LanguagesGenerator {
 

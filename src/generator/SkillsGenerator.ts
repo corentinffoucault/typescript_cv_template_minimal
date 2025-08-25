@@ -1,6 +1,6 @@
-import type { Skill } from "../../packages/json_cv_schema/src/type/type.js";
+import type { Skill } from "../../packages/json_cv_schema/src/type/Type.js";
 
-export default class SkillGenerator {
+export default class SkillsGenerator {
 
     public generate(skills: Skill[]): string {
         if (skills.length == 0) {

@@ -1,6 +1,6 @@
 
-import type { Labels, Work } from '../../packages/json_cv_schema/src/type/type.js';
-import Markdown from '../utils/MarkdownGenerator.js';
+import type { Labels, Work } from '../../packages/json_cv_schema/src/type/Type.js';
+import MarkdownGenerator from '../utils/MarkdownGenerator.js';
 
 export default class WorkSkillGenerator {
 
@@ -28,7 +28,7 @@ export default class WorkSkillGenerator {
     }
 
     private generateHighlight(highlight: string): string {
-        return `<li>${Markdown.generate(highlight)}</li>`;
+        return `<li>${MarkdownGenerator.generate(highlight)}</li>`;
     }
 
     private groupHighlightByCategory(work: Work[]): Map<string, Set<string>> {

@@ -1,9 +1,9 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 
-import EducationGenerator from '../../src/generator/Education.js';
+import EducationGenerator from '../../src/generator/EducationGenerator.js';
 
-describe('Education', () => {
+describe('EducationGenerator', () => {
     const educationGenerator = new EducationGenerator();
     it('generate empty education', () => {
         const education = educationGenerator.generate([], {

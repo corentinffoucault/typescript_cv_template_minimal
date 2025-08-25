@@ -1,4 +1,4 @@
-import Markdown from '../utils/MarkdownGenerator.js';
+import MarkdownGenerator from '../utils/MarkdownGenerator.js';
 export default class WorkSkillGenerator {
     generate(work, labels) {
         if (work.length == 0) {
@@ -20,7 +20,7 @@ export default class WorkSkillGenerator {
             </ul>`;
     }
     generateHighlight(highlight) {
-        return `<li>${Markdown.generate(highlight)}</li>`;
+        return `<li>${MarkdownGenerator.generate(highlight)}</li>`;
     }
     groupHighlightByCategory(work) {
         return work.reduce((acc, { highlights }) => {

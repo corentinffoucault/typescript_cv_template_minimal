@@ -1,7 +1,7 @@
 
-export default class DateTime {
+export default class DateTimeTools {
     public static generate(date: string): string {
-        return `<time datetime="${date}">${DateTime.formatDate(date)}</time>`;
+        return `<time datetime="${date}">${DateTimeTools.formatDate(date)}</time>`;
     }
 
     private static formatDate(dateString: string): string {

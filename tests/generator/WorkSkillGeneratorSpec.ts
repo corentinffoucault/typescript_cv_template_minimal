@@ -1,9 +1,9 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 
-import WorkSkillGenerator from '../../src/generator/WorkSkill.js';
+import WorkSkillGenerator from '../../src/generator/WorkSkillGenerator.js';
 
-describe('Work', () => {
+describe('WorkGenerator', () => {
     const workSkillGenerator = new WorkSkillGenerator();
     it('generate minimal workSkill', () => {
         const header = workSkillGenerator.generate([], {

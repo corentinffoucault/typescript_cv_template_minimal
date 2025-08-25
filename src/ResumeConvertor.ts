@@ -2,17 +2,17 @@ import { promises as fs } from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
 
-import ResumeGenerator from "./generator/Resume.js";
-import EducationGenerator from './generator/Education.js';
-import HeaderGenerator from './generator/Header.js';
-import InterestGenerator from './generator/Interests.js';
-import LanguagesGenerator from './generator/Languages.js';
-import MetaGenerator from './generator/Meta.js';
-import SkillGenerator from './generator/Skills.js';
-import WorkSimplifyGenerator from './generator/WorkSimplify.js';
-import WorkSkillGenerator from './generator/WorkSkill.js';
+import ResumeGenerator from "./generator/ResumeGenerator.js";
+import EducationGenerator from './generator/EducationGenerator.js';
+import HeaderGenerator from './generator/HeaderGenerator.js';
+import InterestGenerator from './generator/InterestsGenerator.js';
+import LanguagesGenerator from './generator/LanguagesGenerator.js';
+import MetaGenerator from './generator/MetaGenerator.js';
+import SkillGenerator from './generator/SkillsGenerator.js';
+import WorkSimplifyGenerator from './generator/WorkSimplifyGenerator.js';
+import WorkSkillGenerator from './generator/WorkSkillGenerator.js';
 
-import { ResumeSchema } from "../packages/json_cv_schema/src/index.js";
+import { ResumeSchema } from "../packages/json_cv_schema/src/Index.js";
 import { IResumeConvertor } from "../packages/json_cv_schema/src/type/IResumeConvertor.js";
 
 export default class ResumeConvertor implements IResumeConvertor {

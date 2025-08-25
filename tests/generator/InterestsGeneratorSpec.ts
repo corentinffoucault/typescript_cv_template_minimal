@@ -1,9 +1,9 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 
-import InterestsGenerator from '../../src/generator/Interests.js';
+import InterestsGenerator from '../../src/generator/InterestsGenerator.js';
 
-describe('Interest', () => {
+describe('InterestGenerator', () => {
     const interestsGenerator = new InterestsGenerator();
     it('generate empty Interests', () => {
         const interests = interestsGenerator.generate([], {
