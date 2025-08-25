@@ -1,7 +1,7 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
-import LanguagesGenerator from '../../src/generator/Languages.js';
-describe('Languages', () => {
+import LanguagesGenerator from '../../src/generator/LanguagesGenerator.js';
+describe('LanguagesGenerator', () => {
     const languagesGenerator = new LanguagesGenerator();
     it('generate minimal language', () => {
         const languages = languagesGenerator.generate([], {

@@ -1,39 +1,16 @@
 import DurationGenerator from './DurationGenerator.js';
-import type { Iso8601, Labels, Team, Work, Highlight } from '../../packages/json_cv_schema/src/type/Type.js';
 import LinkGenerator from '../utils/LinkGenerator.js';
-
-//TODO: rework the name
-type NestedJob = {
-    description?: string;
-    name?: string;
-    url?: string;
-    jobs: PartJob[];
-};
-type PartJob = {
-    location?: string;
-    position?: string;
-    startDate?: Iso8601;
-    endDate?: Iso8601;
-    summary?: string;
-    team?: Team;
-    highlights?: Highlight[];
-    planguages?: string[];
-    env?: string[];
-    tools?: string[];
-    method?: string[];
-};
-
-export default class WorkSimplifyGenerator {
-
-    public generate(works: Work[] = [], labels: Labels): string {
+export default class SimplifyWorksGenerator {
+    generate(works = [], labels) {
         if (works.length == 0) {
             return '';
         }
-        const nestedWork = works.reduce((acc: NestedJob[], { description, name, url, ...rest }) => {
+        const nestedWork = works.reduce((acc, { description, name, url, ...rest }) => {
             const prev = acc[acc.length - 1];
             if (prev && prev.name === name) {
                 prev.jobs.push(rest);
-            } else {
+            }
+            else {
                 acc.push({ description, name, url, jobs: [rest] });
             }
             return acc;
@@ -46,8 +23,7 @@ export default class WorkSimplifyGenerator {
         </div>
       </div>`;
     }
-
-    private generateWork(job: NestedJob): string {
+    generateWork(job) {
         const jobs = this.buildTimeLine(job.jobs);
         return `
               <article>
@@ -61,17 +37,17 @@ export default class WorkSimplifyGenerator {
               </article>
             `;
     }
-
     //TODO: rework this part
-    private buildTimeLine(jobs: PartJob[]): PartJob[] {
-        return jobs.reduce((acc: PartJob[], subJob: PartJob) => {
+    buildTimeLine(jobs) {
+        return jobs.reduce((acc, subJob) => {
             let hasMelt = false;
             for (let element of acc) {
                 if (subJob.position === element.position) {
                     if (subJob.endDate === element.startDate) {
                         element.startDate = subJob.startDate;
                         hasMelt = true;
-                    } else if (subJob.startDate === element.endDate) {
+                    }
+                    else if (subJob.startDate === element.endDate) {
                         element.endDate = subJob.endDate;
                         hasMelt = true;
                     }
@@ -84,8 +60,7 @@ export default class WorkSimplifyGenerator {
             return acc;
         }, []);
     }
-
-    private generateJob(job: PartJob): string {
+    generateJob(job) {
         return `
             <div>
                 <span>
@@ -98,5 +73,4 @@ export default class WorkSimplifyGenerator {
                 </span>
             </div>`;
     }
-
 }

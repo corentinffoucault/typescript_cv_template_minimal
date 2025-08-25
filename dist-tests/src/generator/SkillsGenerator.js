@@ -1,4 +1,4 @@
-export default class SkillGenerator {
+export default class SkillsGenerator {
     generate(skills) {
         if (skills.length == 0) {
             return '';

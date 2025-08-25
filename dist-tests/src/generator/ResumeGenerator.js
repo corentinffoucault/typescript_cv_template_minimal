@@ -3,19 +3,19 @@ export default class ResumeGenerator {
     headerGenerator;
     educationGenerator;
     languagesGenerator;
-    skillGenerator;
+    skillsGenerator;
     interestGenerator;
-    workSkillGenerator;
-    workSimplifyGenerator;
-    constructor(metaGenerator, headerGenerator, educationGenerator, languagesGenerator, skillGenerator, interestGenerator, workSkillGenerator, workSimplifyGenerator) {
+    skillWorksGenerator;
+    simplifyWorksGenerator;
+    constructor(metaGenerator, headerGenerator, educationGenerator, languagesGenerator, skillsGenerator, interestGenerator, skillWorksGenerator, simplifyWorksGenerator) {
         this.metaGenerator = metaGenerator;
         this.headerGenerator = headerGenerator;
         this.educationGenerator = educationGenerator;
         this.languagesGenerator = languagesGenerator;
-        this.skillGenerator = skillGenerator;
+        this.skillsGenerator = skillsGenerator;
         this.interestGenerator = interestGenerator;
-        this.workSkillGenerator = workSkillGenerator;
-        this.workSimplifyGenerator = workSimplifyGenerator;
+        this.skillWorksGenerator = skillWorksGenerator;
+        this.simplifyWorksGenerator = simplifyWorksGenerator;
     }
     generate(resume, css, js) {
         return `
@@ -39,13 +39,13 @@ export default class ResumeGenerator {
                 <aside class="left-column">
                     ${this.educationGenerator.generate(resume.education, resume.labels)}
                     ${this.languagesGenerator.generate(resume.languages, resume.labels)}
-                    ${this.skillGenerator.generate(resume.skills)} 
+                    ${this.skillsGenerator.generate(resume.skills)} 
                     ${this.interestGenerator.generate(resume.interests, resume.labels)}
                 </aside>
                 <div class="vl"></div>
                     <div class="right-column">
-                        ${this.workSkillGenerator.generate(resume.work, resume.labels)} 
-                        ${this.workSimplifyGenerator.generate(resume.work, resume.labels)} 
+                        ${this.skillWorksGenerator.generate(resume.work, resume.labels)} 
+                        ${this.simplifyWorksGenerator.generate(resume.work, resume.labels)} 
                     </div>
                 </div>
             </body>

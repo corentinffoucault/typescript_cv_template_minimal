@@ -1,10 +1,10 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
-import WorkSkillGenerator from '../../src/generator/WorkSkill.js';
-describe('Work', () => {
-    const workSkillGenerator = new WorkSkillGenerator();
+import SkillWorksGenerator from '../../src/generator/SkillWorksGenerator.js';
+describe('SkillWorksGenerator', () => {
+    const skillWorksGenerator = new SkillWorksGenerator();
     it('generate minimal workSkill', () => {
-        const header = workSkillGenerator.generate([], {
+        const header = skillWorksGenerator.generate([], {
             works: 'works',
             planguages: 'planguages',
             team: 'team',
@@ -19,7 +19,7 @@ describe('Work', () => {
         assert.equal(header, ``);
     });
     it('generate one minimal workSkill', () => {
-        const header = workSkillGenerator.generate([{
+        const header = skillWorksGenerator.generate([{
                 name: 'Company Name',
                 description: 'Description of the company',
                 position: 'My position in the company',
@@ -94,7 +94,7 @@ describe('Work', () => {
             </div>`);
     });
     it('generate two workSkill from two job', () => {
-        const header = workSkillGenerator.generate([{
+        const header = skillWorksGenerator.generate([{
                 name: 'First Company Name',
                 description: 'Description of the company',
                 position: 'My position in the company',

@@ -1,7 +1,7 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
-import MetaGenerator from '../../src/generator/Meta.js';
-describe('Meta', () => {
+import MetaGenerator from '../../src/generator/MetaGenerator.js';
+describe('MetaGenerator', () => {
     const metaGenerator = new MetaGenerator();
     it('generate minimal meta', () => {
         const meta = metaGenerator.generate({

@@ -1,5 +1,5 @@
-import Icon from '../utils/IconGenerator.js';
-import Link from '../utils/LinkGenerator.js';
+import IconGenerator from '../utils/IconGenerator.js';
+import LinkGenerator from '../utils/LinkGenerator.js';
 export default class HeaderGenerator {
     formatCountry(countryCode) {
         return Intl.DisplayNames ? new Intl.DisplayNames(['en'], { type: 'region' }).of(countryCode) : countryCode;
@@ -29,7 +29,7 @@ export default class HeaderGenerator {
     static generateProfile({ network, url, username }) {
         return `
             <li>
-                ${network && Icon.generate(network, 'user')} ${Link.generate(url, username)}
+                ${network && IconGenerator.generate(network, 'user')} ${LinkGenerator.generate(url, username)}
                 ${network && `<span class="network">(${network})</span>`}
             </li>`;
     }
@@ -42,9 +42,6 @@ export default class HeaderGenerator {
         const htmlPhone = `<a href="tel:${phone.replace(/\s/g, '')}">${phone}</a>`;
         return this.generateLineWithIcon('phone', htmlPhone);
     }
-    generateLink(url) {
-        return this.generateLineWithIcon('link', Link.generate(url));
-    }
     generateEMail(email) {
         const htmlMail = `<a href="mailto:${email}">${email}</a>`;
         return this.generateLineWithIcon('mail', htmlMail);
@@ -52,7 +49,7 @@ export default class HeaderGenerator {
     generateLineWithIcon(name, text, css) {
         return `
             <li${css ? ` style="${css}"` : ''}>
-                ${Icon.generate(name)}
+                ${IconGenerator.generate(name)}
                 ${text}
             </li>`;
     }

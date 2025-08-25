@@ -6,8 +6,8 @@ import InterestGenerator from './InterestsGenerator.js';
 import LanguagesGenerator from './LanguagesGenerator.js';
 import MetaGenerator from './MetaGenerator.js';
 import SkillsGenerator from './SkillsGenerator.js';
-import WorkSimplifyGenerator from './WorkSimplifyGenerator.js';
-import WorkSkillGenerator from './WorkSkillGenerator.js';
+import SimplifyWorksGenerator from './SimplifyWorksGenerator.js';
+import SkillWorksGenerator from './SkillWorksGenerator.js';
 
 export default class ResumeGenerator {
 
@@ -18,8 +18,8 @@ export default class ResumeGenerator {
         private languagesGenerator: LanguagesGenerator,
         private skillsGenerator: SkillsGenerator,
         private interestGenerator: InterestGenerator,
-        private workSkillGenerator: WorkSkillGenerator,
-        private workSimplifyGenerator: WorkSimplifyGenerator,
+        private skillWorksGenerator: SkillWorksGenerator,
+        private simplifyWorksGenerator: SimplifyWorksGenerator,
     ) {
 
     }
@@ -51,8 +51,8 @@ export default class ResumeGenerator {
                 </aside>
                 <div class="vl"></div>
                     <div class="right-column">
-                        ${this.workSkillGenerator.generate(resume.work, resume.labels)} 
-                        ${this.workSimplifyGenerator.generate(resume.work, resume.labels)} 
+                        ${this.skillWorksGenerator.generate(resume.work, resume.labels)} 
+                        ${this.simplifyWorksGenerator.generate(resume.work, resume.labels)} 
                     </div>
                 </div>
             </body>

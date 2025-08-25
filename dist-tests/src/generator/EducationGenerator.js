@@ -1,4 +1,4 @@
-import Link from '../utils/LinkGenerator.js';
+import LinkGenerator from '../utils/LinkGenerator.js';
 export default class EducationGenerator {
     generate(educations, labels) {
         if (educations.length == 0) {
@@ -18,7 +18,7 @@ export default class EducationGenerator {
         return `
             <article>
                 <header>
-                  <h5>${Link.generate(education.url, education.institution)}</h5>
+                  <h5>${LinkGenerator.generate(education.url, education.institution)}</h5>
                   <div>
                     ${education.area && `<strong>${education.area}</strong>`}
                     ${education.endDate}

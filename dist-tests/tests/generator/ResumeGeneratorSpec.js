@@ -1,16 +1,16 @@
 import { before, describe, it } from 'node:test';
 import * as sinon from 'sinon';
 import assert from 'node:assert/strict';
-import ResumeGenerator from '../../src/generator/Resume.js';
-import EducationGenerator from '../../src/generator/Education.js';
-import InterestGenerator from '../../src/generator/Interests.js';
-import HeaderGenerator from '../../src/generator/Header.js';
-import LanguageGenerator from '../../src/generator/Languages.js';
-import MetaGenerator from '../../src/generator/Meta.js';
-import SkillGenerator from '../../src/generator/Skills.js';
-import WorkSimplifyGenerator from '../../src/generator/WorkSimplify.js';
-import WorkSkillGenerator from '../../src/generator/WorkSkill.js';
-describe('Header', async () => {
+import ResumeGenerator from '../../src/generator/ResumeGenerator.js';
+import EducationGenerator from '../../src/generator/EducationGenerator.js';
+import InterestGenerator from '../../src/generator/InterestsGenerator.js';
+import HeaderGenerator from '../../src/generator/HeaderGenerator.js';
+import LanguageGenerator from '../../src/generator/LanguagesGenerator.js';
+import MetaGenerator from '../../src/generator/MetaGenerator.js';
+import SkillsGenerator from '../../src/generator/SkillsGenerator.js';
+import SimplifyWorksGenerator from '../../src/generator/SimplifyWorksGenerator.js';
+import SkillWorksGenerator from '../../src/generator/SkillWorksGenerator.js';
+describe('ResumeGenerator', async () => {
     let resumeGenerator;
     before(() => {
         var educationGenerator = sinon.createStubInstance(EducationGenerator, {
@@ -33,19 +33,19 @@ describe('Header', async () => {
             generate: sinon.stub(),
         });
         metaGenerator.generate.returns("generated meta");
-        var skillGenerator = sinon.createStubInstance(SkillGenerator, {
+        var skillsGenerator = sinon.createStubInstance(SkillsGenerator, {
             generate: sinon.stub(),
         });
-        skillGenerator.generate.returns("generated skill");
-        var workSimplifyGenerator = sinon.createStubInstance(WorkSimplifyGenerator, {
+        skillsGenerator.generate.returns("generated skill");
+        var simplifyWorksGenerator = sinon.createStubInstance(SimplifyWorksGenerator, {
             generate: sinon.stub(),
         });
-        workSimplifyGenerator.generate.returns("generated workSimplify");
-        var workSkillGenerator = sinon.createStubInstance(WorkSkillGenerator, {
+        simplifyWorksGenerator.generate.returns("generated workSimplify");
+        var skillWorksGenerator = sinon.createStubInstance(SkillWorksGenerator, {
             generate: sinon.stub(),
         });
-        workSkillGenerator.generate.returns("generated workSkill");
-        resumeGenerator = new ResumeGenerator(metaGenerator, headerGenerator, educationGenerator, languageGenerator, skillGenerator, interestGenerator, workSkillGenerator, workSimplifyGenerator);
+        skillWorksGenerator.generate.returns("generated workSkill");
+        resumeGenerator = new ResumeGenerator(metaGenerator, headerGenerator, educationGenerator, languageGenerator, skillsGenerator, interestGenerator, skillWorksGenerator, simplifyWorksGenerator);
     });
     await it('generate minimal resume', async () => {
         const resume = resumeGenerator.generate({

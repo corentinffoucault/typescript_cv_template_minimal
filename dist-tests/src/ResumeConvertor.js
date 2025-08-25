@@ -1,19 +1,19 @@
 import { promises as fs } from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
-import ResumeGenerator from "./generator/Resume.js";
-import EducationGenerator from './generator/Education.js';
-import HeaderGenerator from './generator/Header.js';
-import InterestGenerator from './generator/Interests.js';
-import LanguagesGenerator from './generator/Languages.js';
-import MetaGenerator from './generator/Meta.js';
-import SkillGenerator from './generator/Skills.js';
-import WorkSimplifyGenerator from './generator/WorkSimplify.js';
-import WorkSkillGenerator from './generator/WorkSkill.js';
+import ResumeGenerator from "./generator/ResumeGenerator.js";
+import EducationGenerator from './generator/EducationGenerator.js';
+import HeaderGenerator from './generator/HeaderGenerator.js';
+import InterestGenerator from './generator/InterestsGenerator.js';
+import LanguagesGenerator from './generator/LanguagesGenerator.js';
+import MetaGenerator from './generator/MetaGenerator.js';
+import SkillsGenerator from './generator/SkillsGenerator.js';
+import SimplifyWorksGenerator from './generator/SimplifyWorksGenerator.js';
+import SkillWorksGenerator from './generator/SkillWorksGenerator.js';
 export default class ResumeConvertor {
     resumeGenerator;
     constructor() {
-        this.resumeGenerator = new ResumeGenerator(new MetaGenerator(), new HeaderGenerator(), new EducationGenerator(), new LanguagesGenerator(), new SkillGenerator(), new InterestGenerator(), new WorkSkillGenerator(), new WorkSimplifyGenerator());
+        this.resumeGenerator = new ResumeGenerator(new MetaGenerator(), new HeaderGenerator(), new EducationGenerator(), new LanguagesGenerator(), new SkillsGenerator(), new InterestGenerator(), new SkillWorksGenerator(), new SimplifyWorksGenerator());
     }
     async generateResume(resumeJson) {
         const __filename = fileURLToPath(import.meta.url);

@@ -1,16 +1,10 @@
-
-import type { Labels, Work } from '../../packages/json_cv_schema/src/type/Type.js';
 import MarkdownGenerator from '../utils/MarkdownGenerator.js';
-
-export default class WorkSkillGenerator {
-
-    public generate(work: Work[], labels: Labels): string {
+export default class SkillWorksGenerator {
+    generate(work, labels) {
         if (work.length == 0) {
             return '';
         }
-
-        const highlightsByCat: Map<string, Set<string>> = this.groupHighlightByCategory(work);
-
+        const highlightsByCat = this.groupHighlightByCategory(work);
         return `
             <div id="workSkill">
                 <div class="highlights">
@@ -18,20 +12,17 @@ export default class WorkSkillGenerator {
                 </div>
             </div>`;
     }
-
-    private generateCategory([category, highlights]: [string, Set<string>]): string {
+    generateCategory([category, highlights]) {
         return `
             <h3>${category}</h3>
             <ul>
                 ${Array.from(highlights).sort().map(highlight => this.generateHighlight(highlight)).join('')}
             </ul>`;
     }
-
-    private generateHighlight(highlight: string): string {
+    generateHighlight(highlight) {
         return `<li>${MarkdownGenerator.generate(highlight)}</li>`;
     }
-
-    private groupHighlightByCategory(work: Work[]): Map<string, Set<string>> {
+    groupHighlightByCategory(work) {
         return work.reduce((acc, { highlights }) => {
             if (!highlights || highlights.length == 0) {
                 return acc;

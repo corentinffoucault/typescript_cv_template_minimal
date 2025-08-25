@@ -1,12 +1,12 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 
-import WorkSimplifyGenerator from '../../src/generator/WorkSimplifyGenerator.js';
+import SimplifyWorksGenerator from '../../src/generator/SimplifyWorksGenerator.js';
 
 describe('WorkGenerator', () => {
-    const workSimplifyGenerator = new WorkSimplifyGenerator();
+    const simplifyWorksGenerator = new SimplifyWorksGenerator();
     it('generate minimal workSimplify', () => {
-        const header = workSimplifyGenerator.generate([], {
+        const header = simplifyWorksGenerator.generate([], {
             works: 'works',
             planguages: 'planguages',
             team: 'team',
@@ -22,7 +22,7 @@ describe('WorkGenerator', () => {
     });
 
     it('generate one minimal workSimplify', () => {
-        const header = workSimplifyGenerator.generate([{
+        const header = simplifyWorksGenerator.generate([{
             name: 'Company Name',
             description: 'Description of the company',
             position: 'My position in the company',
@@ -106,7 +106,7 @@ describe('WorkGenerator', () => {
     });
 
     it('generate two workSimplify from two company', () => {
-        const header = workSimplifyGenerator.generate([{
+        const header = simplifyWorksGenerator.generate([{
             name: 'First Company Name',
             description: 'Description of the company',
             position: 'My position in the company',
@@ -252,7 +252,7 @@ describe('WorkGenerator', () => {
     });
 
     it('generate two workSimplify from one company', () => {
-        const header = workSimplifyGenerator.generate([{
+        const header = simplifyWorksGenerator.generate([{
             name: 'First Company Name',
             description: 'Description of the company',
             position: 'My position in the company',

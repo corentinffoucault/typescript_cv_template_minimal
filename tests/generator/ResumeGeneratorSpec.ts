@@ -9,8 +9,8 @@ import HeaderGenerator from '../../src/generator/HeaderGenerator.js';
 import LanguageGenerator from '../../src/generator/LanguagesGenerator.js';
 import MetaGenerator from '../../src/generator/MetaGenerator.js';
 import SkillsGenerator from '../../src/generator/SkillsGenerator.js';
-import WorkSimplifyGenerator from '../../src/generator/WorkSimplifyGenerator.js';
-import WorkSkillGenerator from '../../src/generator/WorkSkillGenerator.js';
+import SimplifyWorksGenerator from '../../src/generator/SimplifyWorksGenerator.js';
+import SkillWorksGenerator from '../../src/generator/SkillWorksGenerator.js';
 
 describe('ResumeGenerator', async () => {
     let resumeGenerator: ResumeGenerator;
@@ -36,28 +36,28 @@ describe('ResumeGenerator', async () => {
             generate: sinon.stub(),
         });
         metaGenerator.generate.returns("generated meta");
-        var SkillsGenerator = sinon.createStubInstance(SkillsGenerator, {
+        var skillsGenerator = sinon.createStubInstance(SkillsGenerator, {
             generate: sinon.stub(),
         });
-        SkillsGenerator.generate.returns("generated skill");
-        var workSimplifyGenerator = sinon.createStubInstance(WorkSimplifyGenerator, {
+        skillsGenerator.generate.returns("generated skill");
+        var simplifyWorksGenerator = sinon.createStubInstance(SimplifyWorksGenerator, {
             generate: sinon.stub(),
         });
-        workSimplifyGenerator.generate.returns("generated workSimplify");
-        var workSkillGenerator = sinon.createStubInstance(WorkSkillGenerator, {
+        simplifyWorksGenerator.generate.returns("generated workSimplify");
+        var skillWorksGenerator = sinon.createStubInstance(SkillWorksGenerator, {
             generate: sinon.stub(),
         });
-        workSkillGenerator.generate.returns("generated workSkill");
+        skillWorksGenerator.generate.returns("generated workSkill");
 
         resumeGenerator = new ResumeGenerator(
             metaGenerator,
             headerGenerator,
             educationGenerator,
             languageGenerator,
-            SkillsGenerator,
+            skillsGenerator,
             interestGenerator,
-            workSkillGenerator,
-            workSimplifyGenerator
+            skillWorksGenerator,
+            simplifyWorksGenerator
         );
     });
 
