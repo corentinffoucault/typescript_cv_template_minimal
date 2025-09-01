@@ -19,17 +19,17 @@ Type safety is ensured by the submodule [json_cv_schema](https://github.com/core
 The template is designed to generate a clean and modern **HTML CV** from a structured **JSON resume**.  
 It can be reused across projects, making it easy to keep your resume consistent, customizable, and portable.
 
+---
 
-## 🚀 Installation
+## Installation
 
-Make sure you have **Node.js** and **npm** installed.  
-Then install the project and dependencies:
-
-### 🚀 Example with existing template
+Requirements:
+- **Node.js** v22 or higher
+- **npm** v11 or higher
 
 ```bash
-git clone --recurse-submodules https://github.com/corentinffoucault/typescript_cv_template.git
-cd full-cv-template
+git clone --recurse-submodules https://github.com/corentinffoucault/typescript_cv_template_simple.git
+cd typescript_cv_template_simple
 npm install-recursive
 npm run build
 ``` 
@@ -43,6 +43,8 @@ Instead, it acts as a **template dependency** for [CV_generator_from_JSON](https
 
 To see how to use it you can read this [readme](https://github.com/corentinffoucault/CV_generator_from_JSON)
 
+---
+
 ## Test
 
 Tests have been added to ensure the stability and reliability of the project.
@@ -52,5 +54,6 @@ To run them, use the following command:
 npm run test
 ```
 
+---
 
 The tests verify that the template correctly generates the expected files and conforms to the JSON schema defined in json_cv_schema
