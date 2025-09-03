@@ -37,7 +37,6 @@ export default class HeaderGenerator {
         return `
             <li>
                 ${network && IconGenerator.generate(network as feather.FeatherIconNames, 'user')} ${LinkGenerator.generate(url, username)}
-                ${network && `<span class="network">(${network})</span>`}
             </li>`;
     }
 
