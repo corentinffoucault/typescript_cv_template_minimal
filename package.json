@@ -18,7 +18,7 @@
         "clean-test": "tsc --build --clean tsconfig.test.json",
         "install-recursive": "npm ci && npm run install-submodule",
         "install-submodule": "(cd packages/json_cv_schema && npm install)",
-        "pretest": "npm run clean-test && npm run build && npm run build-tests",
+        "pretest": "npm run build-tests",
         "start": "node dist/index.js",
         "test": "npm run pretest && find dist-tests -type f -name \"*Spec.js\" | xargs node --test"
     },
