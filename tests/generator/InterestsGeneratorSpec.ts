@@ -16,7 +16,8 @@ describe('InterestGenerator', () => {
             worksSkill: 'worksSkill',
             diploma: 'diploma',
             language: 'language',
-            interests: 'interests'
+            interests: 'interests',
+            internships: 'internships'
         });
         assert.equal(interests, ``);
     });
@@ -39,7 +40,8 @@ describe('InterestGenerator', () => {
             worksSkill: 'worksSkill',
             diploma: 'diploma',
             language: 'language',
-            interests: 'interests'
+            interests: 'interests',
+            internships: 'internships'
         });
         assert.equal(interests, `
             <div class="container interests-container">

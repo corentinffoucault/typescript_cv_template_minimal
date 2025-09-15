@@ -16,7 +16,8 @@ describe('EducationGenerator', () => {
             worksSkill: 'worksSkill',
             diploma: 'diploma',
             language: 'language',
-            interests: 'interests'
+            interests: 'interests',
+            internships: 'internships'
         });
         assert.equal(education, '');
     });
@@ -37,7 +38,8 @@ describe('EducationGenerator', () => {
             worksSkill: 'worksSkill',
             diploma: 'diploma',
             language: 'language',
-            interests: 'interests'
+            interests: 'interests',
+            internships: 'internships'
         });
         assert.equal(education, `
             <div class="container education-container">

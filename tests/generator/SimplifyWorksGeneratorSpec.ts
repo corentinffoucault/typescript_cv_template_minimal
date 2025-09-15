@@ -17,7 +17,8 @@ describe('WorkGenerator', () => {
                 worksSkill: 'worksSkill',
                 diploma: 'diploma',
                 language: 'language',
-                interests: 'interests'
+                interests: 'interests',
+                internships: 'internships'
             });
             assert.equal(header, ``);
         });
@@ -75,7 +76,8 @@ describe('WorkGenerator', () => {
                 worksSkill: 'worksSkill',
                 diploma: 'diploma',
                 language: 'language',
-                interests: 'interests'
+                interests: 'interests',
+                internships: 'internships'
             });
             assert.equal(header, `
         <div id="work">
@@ -201,7 +203,8 @@ describe('WorkGenerator', () => {
                 worksSkill: 'worksSkill',
                 diploma: 'diploma',
                 language: 'language',
-                interests: 'interests'
+                interests: 'interests',
+                internships: 'internships'
             });
             assert.equal(header, `
         <div id="work">
@@ -347,7 +350,8 @@ describe('WorkGenerator', () => {
                 worksSkill: 'worksSkill',
                 diploma: 'diploma',
                 language: 'language',
-                interests: 'interests'
+                interests: 'interests',
+                internships: 'internships'
             });
             assert.equal(header, `
         <div id="work">
@@ -401,7 +405,8 @@ describe('WorkGenerator', () => {
                 worksSkill: 'worksSkill',
                 diploma: 'diploma',
                 language: 'language',
-                interests: 'interests'
+                interests: 'interests',
+                internships: 'internships'
             });
             assert.equal(header, ``);
         });
@@ -459,7 +464,8 @@ describe('WorkGenerator', () => {
                 worksSkill: 'worksSkill',
                 diploma: 'diploma',
                 language: 'language',
-                interests: 'interests'
+                interests: 'interests',
+                internships: 'internships'
             });
             assert.equal(header, `
         <div id="work">
@@ -585,7 +591,8 @@ describe('WorkGenerator', () => {
                 worksSkill: 'worksSkill',
                 diploma: 'diploma',
                 language: 'language',
-                interests: 'interests'
+                interests: 'interests',
+                internships: 'internships'
             });
             assert.equal(header, `
         <div id="work">
@@ -731,7 +738,8 @@ describe('WorkGenerator', () => {
                 worksSkill: 'worksSkill',
                 diploma: 'diploma',
                 language: 'language',
-                interests: 'interests'
+                interests: 'interests',
+                internships: 'internships'
             });
             assert.equal(header, `
         <div id="work">

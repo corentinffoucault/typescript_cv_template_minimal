@@ -8,6 +8,7 @@ import MetaGenerator from './MetaGenerator.js';
 import SkillsGenerator from './SkillsGenerator.js';
 import SimplifyWorksGenerator from './SimplifyWorksGenerator.js';
 import SkillWorksGenerator from './SkillWorksGenerator.js';
+import InternshipsGenerator from './InternshipsGenerator.js';
 
 export default class ResumeGenerator {
 
@@ -20,6 +21,7 @@ export default class ResumeGenerator {
         private interestGenerator: InterestGenerator,
         private skillWorksGenerator: SkillWorksGenerator,
         private simplifyWorksGenerator: SimplifyWorksGenerator,
+        private internshipsGenerator: InternshipsGenerator,
     ) {
 
     }
@@ -43,16 +45,17 @@ export default class ResumeGenerator {
                     ${this.headerGenerator.generate(resume.basics)} 
                 </div>
                 <div class="body">
-                <aside class="left-column">
-                    ${this.educationGenerator.generate(resume.education, resume.labels)}
-                    ${this.languagesGenerator.generate(resume.languages, resume.labels)}
-                    ${this.skillsGenerator.generate(resume.skills)} 
-                    ${this.interestGenerator.generate(resume.interests, resume.labels)}
-                </aside>
-                <div class="vl"></div>
+                    <aside class="left-column">
+                        ${this.educationGenerator.generate(resume.education, resume.labels)}
+                        ${this.languagesGenerator.generate(resume.languages, resume.labels)}
+                        ${this.skillsGenerator.generate(resume.skills)} 
+                        ${this.interestGenerator.generate(resume.interests, resume.labels)}
+                    </aside>
+                    <div class="vl"></div>
                     <div class="right-column">
                         ${this.skillWorksGenerator.generate(resume.work, resume.labels)} 
                         ${this.simplifyWorksGenerator.generate(lang, resume.work, resume.labels)} 
+                        ${this.internshipsGenerator.generate(lang, resume.internships, resume.labels)} 
                     </div>
                 </div>
             </body>

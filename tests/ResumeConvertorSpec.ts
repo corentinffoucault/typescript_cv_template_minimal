@@ -20,7 +20,8 @@ test('ResumeConvertor', async (t) => {
                 worksSkill: 'worksSkill',
                 diploma: 'diploma',
                 language: 'language',
-                interests: 'interests'
+                interests: 'interests',
+                internships: 'internships'
             },
             basics: {
                 name: 'firstName lastName',
