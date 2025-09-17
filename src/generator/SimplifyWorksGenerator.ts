@@ -53,7 +53,6 @@ export default class SimplifyWorksGenerator {
               <article>
                 <header>
                   <h4>${LinkGenerator.generate(job.url, job.name)}</h4>
-                  <div class="meta">${job.description && `<div>${job.description}</div>`}</div>
                 </header>
                 <div class="timeline">
                   ${jobs.map(job => this.generateJob(lang, job)).join('')}
@@ -79,7 +78,7 @@ export default class SimplifyWorksGenerator {
                 }
             }
             if (!hasMelt) {
-                acc.push({ position: subJob.position, startDate: subJob.startDate, endDate: subJob.endDate });
+                acc.push({ position: subJob.position, startDate: subJob.startDate, endDate: subJob.endDate, summary: subJob.summary });
             }
             return acc;
         }, []);
@@ -95,6 +94,7 @@ export default class SimplifyWorksGenerator {
                         </span>
                         ${job.startDate && `: ${DurationGenerator.print(lang, job.startDate, job.endDate)}`}
                     </div>
+                        ${job.summary}
                 </span>
             </div>`;
     }

@@ -87,7 +87,6 @@ describe('WorkGenerator', () => {
               <article>
                 <header>
                   <h4><a href="https://CompanyUrl/">Company Name</a></h4>
-                  <div class="meta"><div>Description of the company</div></div>
                 </header>
                 <div class="timeline">
                   
@@ -99,6 +98,7 @@ describe('WorkGenerator', () => {
                         </span>
                         : <time-duration>2021 – <time datetime="24 March 2025">Mar 2025</time></time-duration>
                     </div>
+                        Resume of the current job
                 </span>
             </div>
                 </div>
@@ -214,7 +214,6 @@ describe('WorkGenerator', () => {
               <article>
                 <header>
                   <h4><a href="https://CompanyUrl/">First Company Name</a></h4>
-                  <div class="meta"><div>Description of the company</div></div>
                 </header>
                 <div class="timeline">
                   
@@ -226,6 +225,7 @@ describe('WorkGenerator', () => {
                         </span>
                         : <time-duration>2021 – <time datetime="24 March 2025">Mar 2025</time></time-duration>
                     </div>
+                        Resume of the current job
                 </span>
             </div>
                 </div>
@@ -234,7 +234,6 @@ describe('WorkGenerator', () => {
               <article>
                 <header>
                   <h4><a href="https://CompanyUrl/">Second Company Name</a></h4>
-                  <div class="meta"><div>Description of the company</div></div>
                 </header>
                 <div class="timeline">
                   
@@ -246,6 +245,7 @@ describe('WorkGenerator', () => {
                         </span>
                         : <time-duration>2021 – <time datetime="24 March 2025">Mar 2025</time></time-duration>
                     </div>
+                        Resume of the current job
                 </span>
             </div>
                 </div>
@@ -361,7 +361,6 @@ describe('WorkGenerator', () => {
               <article>
                 <header>
                   <h4><a href="https://CompanyUrl/">First Company Name</a></h4>
-                  <div class="meta"><div>Description of the company</div></div>
                 </header>
                 <div class="timeline">
                   
@@ -373,6 +372,7 @@ describe('WorkGenerator', () => {
                         </span>
                         : <time-duration>2021 – <time datetime="24 March 2025">Mar 2025</time></time-duration>
                     </div>
+                        Resume of the current job
                 </span>
             </div>
             <div>
@@ -383,6 +383,7 @@ describe('WorkGenerator', () => {
                         </span>
                         : <time-duration>2021 – <time datetime="24 March 2025">Mar 2025</time></time-duration>
                     </div>
+                        Resume of the current job
                 </span>
             </div>
                 </div>
@@ -475,7 +476,6 @@ describe('WorkGenerator', () => {
               <article>
                 <header>
                   <h4><a href="https://CompanyUrl/">Company Name</a></h4>
-                  <div class="meta"><div>Description of the company</div></div>
                 </header>
                 <div class="timeline">
                   
@@ -487,6 +487,7 @@ describe('WorkGenerator', () => {
                         </span>
                         : <time-duration>2021 – <time datetime="24 March 2025">mars 2025</time></time-duration>
                     </div>
+                        Resume of the current job
                 </span>
             </div>
                 </div>
@@ -602,7 +603,6 @@ describe('WorkGenerator', () => {
               <article>
                 <header>
                   <h4><a href="https://CompanyUrl/">First Company Name</a></h4>
-                  <div class="meta"><div>Description of the company</div></div>
                 </header>
                 <div class="timeline">
                   
@@ -614,6 +614,7 @@ describe('WorkGenerator', () => {
                         </span>
                         : <time-duration>2021 – <time datetime="24 March 2025">mars 2025</time></time-duration>
                     </div>
+                        Resume of the current job
                 </span>
             </div>
                 </div>
@@ -622,7 +623,6 @@ describe('WorkGenerator', () => {
               <article>
                 <header>
                   <h4><a href="https://CompanyUrl/">Second Company Name</a></h4>
-                  <div class="meta"><div>Description of the company</div></div>
                 </header>
                 <div class="timeline">
                   
@@ -634,6 +634,7 @@ describe('WorkGenerator', () => {
                         </span>
                         : <time-duration>2021 – <time datetime="24 March 2025">mars 2025</time></time-duration>
                     </div>
+                        Resume of the current job
                 </span>
             </div>
                 </div>
@@ -749,7 +750,6 @@ describe('WorkGenerator', () => {
               <article>
                 <header>
                   <h4><a href="https://CompanyUrl/">First Company Name</a></h4>
-                  <div class="meta"><div>Description of the company</div></div>
                 </header>
                 <div class="timeline">
                   
@@ -761,6 +761,7 @@ describe('WorkGenerator', () => {
                         </span>
                         : <time-duration>2021 – <time datetime="24 March 2025">mars 2025</time></time-duration>
                     </div>
+                        Resume of the current job
                 </span>
             </div>
             <div>
@@ -771,6 +772,7 @@ describe('WorkGenerator', () => {
                         </span>
                         : <time-duration>2021 – <time datetime="24 March 2025">mars 2025</time></time-duration>
                     </div>
+                        Resume of the current job
                 </span>
             </div>
                 </div>
